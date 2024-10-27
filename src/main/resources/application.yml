@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: api-faniko
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-stacktrace: never
+
+logging:
+  file:
+    name: ./logs/api-faniko.log
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  data:
+    mongodb:
+      uri: mongodb://root:secret@127.0.0.1:27017
+      database: faniko-dev
+      auto-index-creation: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update

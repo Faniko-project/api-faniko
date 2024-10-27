@@ -1,0 +1,15 @@
+services:
+  mongodb:
+    image: 'mongo:8.0.3'
+    container_name: 'faniko-mongodb'
+    environment:
+      - 'MONGO_INITDB_DATABASE=faniko-dev'
+      - 'MONGO_INITDB_ROOT_PASSWORD=secret'
+      - 'MONGO_INITDB_ROOT_USERNAME=root'
+    volumes:
+      - 'mongodb_data:/data/db'
+    ports:
+      - '27017:27017'
+
+volumes:
+    mongodb_data:
