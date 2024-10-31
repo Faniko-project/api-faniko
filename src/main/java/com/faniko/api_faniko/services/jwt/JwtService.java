@@ -60,7 +60,7 @@ public class JwtService {
     }
 
     private String getSecret() {
-        return dotenv.get("JWT_SECRET");
+        return dotenv.get("JWT_SECRET_KEY");
     }
 
     private Key getSignInKey() {

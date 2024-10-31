@@ -2,6 +2,7 @@ package com.faniko.api_faniko.models;
 
 import com.faniko.api_faniko.models.base.BaseEntity;
 import lombok.*;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.FieldType;
@@ -20,6 +21,7 @@ import java.util.List;
 @Document(collection = "users")
 public class User extends BaseEntity implements UserDetails {
     @Field(name = "login", targetType = FieldType.STRING)
+    @Indexed(unique = true)
     private String login;
 
     @Field(name = "password", targetType = FieldType.STRING)
