@@ -13,7 +13,7 @@ public class MongoExceptionControllerAdvice {
     @ExceptionHandler(MongoWriteException.class)
     public ResponseEntity<HashMap<String, String>> handleMongoWriteException(MongoWriteException ex) {
         HashMap<String, String> errors = new HashMap<>();
-        errors.put("detail", ex.getMessage());
+        errors.put("message", ex.getMessage());
         errors.put("code", String.valueOf(ex.getCode()));
 
         return ResponseEntity.badRequest().body(errors);

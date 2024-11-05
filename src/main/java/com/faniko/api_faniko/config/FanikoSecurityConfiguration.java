@@ -28,6 +28,7 @@ public class FanikoSecurityConfiguration {
                 .authorizeHttpRequests(
                         authorize -> authorize
                                 .requestMatchers(String.format("%s/auth/**", API_BASE_URL_V1)).permitAll()
+                                .requestMatchers("/error").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider)
