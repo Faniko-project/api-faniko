@@ -17,7 +17,7 @@ public class ResponseStatusExceptionControllerAdvice {
     private HttpServletRequest request;
 
     @ExceptionHandler(ResponseStatusException.class)
-    public ResponseEntity<?> handleResponseStatusException(ResponseStatusException ex) {
+    public ResponseEntity<ErrorRecord> handleResponseStatusException(ResponseStatusException ex) {
         int status = ex.getStatusCode().value();
         String error = HttpStatus.valueOf(status).getReasonPhrase();
         String message = ex.getReason();
