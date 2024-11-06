@@ -12,6 +12,11 @@ logging:
   file:
     name: ./logs/api-faniko.log
 
+springdoc:
+  api-docs:
+    path: /docs/api
+  swagger-ui:
+    path: /docs
 ---
 spring:
   config:
