@@ -1,11 +1,12 @@
 package com.faniko.api_faniko.services.interfaces;
 
 import com.faniko.api_faniko.exceptions.NotFoundException;
+import com.faniko.api_faniko.models.base.BaseEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
-public interface ICrudService<T, R extends MongoRepository<T, String>> {
+public interface ICrudService<T extends BaseEntity, R extends MongoRepository<T, String>> {
 
     /**
      * Get the repository for the entity
@@ -30,6 +31,7 @@ public interface ICrudService<T, R extends MongoRepository<T, String>> {
      * @return the created entity {@link T}
      */
     default T create(T entity) {
+        entity.setId(null);
         return getRepository().save(entity);
     }
 

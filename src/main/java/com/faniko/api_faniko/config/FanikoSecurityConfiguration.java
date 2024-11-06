@@ -29,6 +29,8 @@ public class FanikoSecurityConfiguration {
                         authorize -> authorize
                                 .requestMatchers(String.format("%s/auth/**", API_BASE_URL_V1)).permitAll()
                                 .requestMatchers("/error").permitAll()
+                                .requestMatchers("/docs/**").permitAll()
+                                .requestMatchers("/swagger-ui/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider)

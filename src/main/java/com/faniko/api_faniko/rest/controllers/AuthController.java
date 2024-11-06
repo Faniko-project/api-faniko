@@ -8,6 +8,7 @@ import com.faniko.api_faniko.utils.dto.auth.LoginDto;
 import com.faniko.api_faniko.utils.dto.auth.LoginResponseDto;
 import com.faniko.api_faniko.utils.dto.auth.RegisterDto;
 import com.faniko.api_faniko.utils.dto.user.UserDto;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,11 +26,13 @@ public class AuthController {
     @Autowired
     private RefreshTokenService refreshTokenService;
 
+    @Operation(summary = "Register a new user")
     @PostMapping(value = "/signup", consumes = {"application/json;charset=UTF-8"}, produces = {"application/json;charset=UTF-8"})
     public ResponseEntity<UserDto> register(@RequestBody @Valid RegisterDto registerDto) {
         return ResponseEntity.ok(userService.register(registerDto));
     }
 
+    @Operation(summary = "Authenticate a user")
     @PostMapping(value = "/login", consumes = {"application/json;charset=UTF-8"}, produces = {"application/json;charset=UTF-8"})
     public ResponseEntity<LoginResponseDto> authenticate(@RequestBody @Valid LoginDto loginDto) {
         User user = userService.authenticate(loginDto);
@@ -50,6 +53,7 @@ public class AuthController {
                 .body(loginResponseDto);
     }
 
+    @Operation(summary = "Refresh a user's token")
     @GetMapping(value = "/refresh/{token}", produces = {"application/json;charset=UTF-8"})
     public ResponseEntity<LoginResponseDto> refresh(@PathVariable String token) {
         User user = refreshTokenService.getUserFromRefreshToken(token);
