@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: test
+
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+      platform: h2
+
+  data:
+    mongodb:
+      database: test
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+    defer-datasource-initialization: true
