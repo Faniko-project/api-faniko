@@ -1,6 +1,6 @@
 package com.faniko.api_faniko.config;
 
-import com.faniko.api_faniko.utils.AppConstantsTest;
+import com.faniko.api_faniko.utils.constants.AppConstantsTest;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

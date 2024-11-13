@@ -1,0 +1,8 @@
+[
+  {"_id": "1", "login": "admin", "password": "$2a$10$o249KNv0OCldQlQ7FFIeou1BWfcyt.FSyiB4uN6qeaTw4RV4pJRXC", "roles": [["ADMIN"]]},
+  {"_id": "2", "login": "user", "password": "$2a$10$o249KNv0OCldQlQ7FFIeou1BWfcyt.FSyiB4uN6qeaTw4RV4pJRXC", "roles": [["USER"]]},
+  {"_id": "3", "login": "laundry", "password": "$2a$10$o249KNv0OCldQlQ7FFIeou1BWfcyt.FSyiB4uN6qeaTw4RV4pJRXC", "roles": [["LAUNDRY"]]},
+  {"_id": "4", "login": "laundry_premium", "password": "$2a$10$o249KNv0OCldQlQ7FFIeou1BWfcyt.FSyiB4uN6qeaTw4RV4pJRXC", "roles": [["LAUNDRY_PREMIUM"]]},
+  {"_id": "5", "login": "client", "password": "$2a$10$o249KNv0OCldQlQ7FFIeou1BWfcyt.FSyiB4uN6qeaTw4RV4pJRXC", "roles": [["CLIENT"]]},
+  {"_id": "6", "login": "client_premium", "password": "$2a$10$o249KNv0OCldQlQ7FFIeou1BWfcyt.FSyiB4uN6qeaTw4RV4pJRXC", "roles": [["CLIENT_PREMIUM"]]}
+]
