@@ -27,9 +27,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Set up environment variables
-        run:|
-          echo "JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }}" >> .env
-          echo "JWT_EXPIRATION_TIME=${{ secrets.JWT_EXPIRATION_TIME }}" >> .env
+      run: |
+        echo "JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }}" >> .env
+        echo "JWT_EXPIRATION_TIME=${{ secrets.JWT_EXPIRATION_TIME }}" >> .env
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
