@@ -13,8 +13,7 @@ import java.util.List;
 import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@FanikoTest
-public class RoleServiceTest {
+public class RoleServiceTest extends FanikoTest {
 
     @Autowired
     private RoleService roleService;
@@ -39,7 +38,7 @@ public class RoleServiceTest {
 
         Role role = new Role();
         role.setName(RoleNameEnum.USER);
-        role = roleService.create(role);
+        roleService.create(role);
 
         List<Role> roles = roleService.getAll();
         assertEquals(sizeBefore + 1, roles.size());
