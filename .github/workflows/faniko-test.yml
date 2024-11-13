@@ -11,7 +11,7 @@ jobs:
 
     services:
       docker:
-        image: docker:lts-dind
+        image: docker:dind
         options: --privileged
         ports:
           - 2375:2375
