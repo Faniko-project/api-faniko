@@ -1,9 +1,6 @@
 name: faniko-test
 
-on:
-  push:
-    branches:
-      - '**'
+on: [push, pull_request]
 
 jobs:
   faniko-test:
