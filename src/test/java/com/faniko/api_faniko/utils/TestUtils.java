@@ -1,4 +1,4 @@
-package com.faniko.api_faniko.utils.constants;
+package com.faniko.api_faniko.utils;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
