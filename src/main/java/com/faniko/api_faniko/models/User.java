@@ -16,8 +16,8 @@ import java.util.List;
 @Setter
 @ToString
 @Builder
+@RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 @Document(collection = "users")
 public class User extends BaseEntity implements UserDetails {
     @Field(name = "login", targetType = FieldType.STRING)
@@ -41,6 +41,11 @@ public class User extends BaseEntity implements UserDetails {
     @Override
     public String getUsername() {
         return login;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
     }
 
     @Override

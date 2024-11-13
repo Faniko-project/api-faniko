@@ -17,8 +17,8 @@ import static com.faniko.api_faniko.utils.constants.AppConstant.API_BASE_URL_V1;
 @EnableWebSecurity
 @AllArgsConstructor
 public class FanikoSecurityConfiguration {
-    private final AuthenticationProvider authenticationProvider;
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private AuthenticationProvider authenticationProvider;
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
