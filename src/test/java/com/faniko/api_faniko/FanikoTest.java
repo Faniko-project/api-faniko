@@ -1,4 +1,4 @@
-package com.faniko.api_faniko.annotations;
+package com.faniko.api_faniko;
 
 import com.faniko.api_faniko.utils.AppConstantsTest;
 import org.springframework.boot.test.autoconfigure.data.mongo.AutoConfigureDataMongo;

@@ -1,6 +1,6 @@
 package com.faniko.api_faniko.services;
 
-import com.faniko.api_faniko.annotations.FanikoTest;
+import com.faniko.api_faniko.FanikoTest;
 import com.faniko.api_faniko.exceptions.NotFoundException;
 import com.faniko.api_faniko.models.Role;
 import com.faniko.api_faniko.utils.enums.role.RoleNameEnum;
