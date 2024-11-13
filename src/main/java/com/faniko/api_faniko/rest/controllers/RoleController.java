@@ -2,20 +2,23 @@ package com.faniko.api_faniko.rest.controllers;
 
 import com.faniko.api_faniko.models.Role;
 import com.faniko.api_faniko.services.RoleService;
+import com.faniko.api_faniko.utils.constants.AuthoritiesConstants;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.faniko.api_faniko.utils.constants.AppConstant.API_BASE_URL_V1;
+import static com.faniko.api_faniko.utils.constants.AppConstants.API_BASE_URL_V1;
 
 @RestController
 @RequestMapping(API_BASE_URL_V1 + "/roles")
 @Slf4j
+@PreAuthorize("hasAnyRole('"+ AuthoritiesConstants.ADMIN +"')")
 public class RoleController {
     @Autowired
     private RoleService roleService;
