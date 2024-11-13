@@ -2,15 +2,11 @@ spring:
   profiles:
     active: test
 
-  sql:
-    init:
-      mode: always
-      encoding: UTF-8
-      platform: h2
-
   data:
     mongodb:
       database: test
+      host: localhost
+      port: 27017
 
   jpa:
     hibernate:
